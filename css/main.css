@@ -1,0 +1,197 @@
+@charset "utf-8";
+/* 모든 디바이스(데스크 탑, 태블릿, 모바일) 공통 및 데스크 톱 전용 디자인 */
+*{margin: 0; padding: 0; box-sizing: border-box;} /* 변경 금지 */
+html{font-size: 10px;} /* 변경 금지 */
+
+/* body의 배경색, 배경이미지, 한글 글꼴 등을 지정 */
+body{background-color: rgb(255, 248, 232); font-family: "Noto Sans KR", sans-serif; font-size: 1.6rem; color: #000; line-height: 1.6;}
+li{list-style: none;}
+a{text-decoration: none; color:#333;} /* 사이트 내 대표 a 기본 디자인 설정 */
+img{vertical-align: top;}
+
+/* 영문 폰트에만 적용할 공통 클래스 */
+.font_en{font-family: "Open Sans", sans-serif;}
+
+/* html 상에서는 필요하지만 디자인상으로는 안보이게 설정하는 공통 클래스 */
+.blind{position: absolute; left: -9999px;}
+
+
+/* header ----------------------------------------------------------------- */
+#header{position: fixed; width: 100%; left: 0; top: 0; z-index:9999; background-color: #fff; border-bottom:1px solid #ccc;}
+#header .inner{display:flex; width: 1200px; margin: 0 auto; justify-content: space-between; padding:10px 0px; line-height: 1;}
+
+
+/* 화면 우측 상단 주메뉴 */
+.gnb{}
+.gnb a{line-height: 30px; margin-left: 40px; font-size: 1.8rem; font-weight: bold; transition-duration:0.5s;}
+.gnb a:hover, .gnb a:focus{color:rgb(53, 107, 214);}
+
+
+/* main visual video ----------------------------------------------------------------- */
+.main_video>video{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* about ----------------------------------------------------------------- */
+#about{position: relative; padding-top:200px; margin-top: 100vh;}
+#about .inner{position: relative; width: 1200px; margin: 0 auto; z-index: 888;}
+#about .inner h2{text-align: center; font-size: 5rem; color: #222; position: relative; margin-bottom: 50px;}
+#about .about_wrap{position: relative; display: flex; justify-content:space-between;}
+#about .about_img{width: 40%;}
+#about .about_img img{width: 100%; border-radius: 50%;}
+#about .about_text{width: 45%; padding:30px; display: flex; flex-direction: column; justify-content: space-around;}
+#about .about_text .slogan{font-size: 3.5rem;}
+#about .about_text h3{font-size: 2rem; font-weight: 600;}
+#about .about_text h4{font-weight: 600; font-size: 1.8rem; margin-bottom:16px;}
+#about .about_text li{line-height: 1.8; font-weight: 400;}
+
+#about .about_btn{float: right; display: flex; flex-direction: row; margin-top:30px;}
+#about .about_btn img{width: 28px; margin-right: 10px;}
+#about .about_btn a{color:#333}
+#about .about_btn a:hover, #about .about_btn a:focus{} /* contact 요소 활성화 시 디자인 */
+
+/* skill ----------------------------------------------------------------- */
+#skill{position: relative; padding-top: 200px;}
+#skill .inner{position: relative; display: flex; flex-direction: column; align-items: center; }
+#skill .inner h2{font-size: 5rem; font-weight: 800; margin-bottom: 50px;}
+#skill .skill_list{position: relative; display: flex; justify-content: space-evenly; width: 96%; max-width: 1200px; margin: 50px auto;}
+#skill .skill_list>li{display: flex; flex-direction: column; align-items: center; opacity: 0; top: 100px; position: relative;}
+#skill .skill_list li div{position: relative; width: 30px; height: 20px; border-radius: 50%;background-color: #b9e3f9; transform: rotate(-10deg); transition-duration: 0.5s;}
+#skill .skill_list li:hover div{transform: rotate(0deg);}
+#skill .skill_list li div p{font-size: 3rem; color: #000; text-align:center; font-weight: 700; letter-spacing: -5px; line-height: 1; position: absolute; left: 50%; top:20%; transform: translateX(-55%);}
+#skill .skill_list li h3{font-size: 1.4rem; margin: 30px 0 20px 0;}
+#skill .skill_list li button{width: 120px; height: 40px; background:none; border: 1px solid #000; margin: 30px 0; cursor: pointer; transition-duration: 0.5s;}
+#skill .skill_list li button:hover{background-color: #000; color: #FFF;}
+
+/* portfolio ----------------------------------------------------------------- */
+#portfolio{position: relative; padding-top: 200px; display: flex; flex-direction: column ; align-items: center;  overflow: hidden;}
+#portfolio h2{font-size: 5rem; font-weight: 800;}
+#portfolio .port_wrap{position: relative; width: 90%; max-width: 1200px;}
+#portfolio .port_wrap .port{display: flex; margin:80px 0;}
+#portfolio .port_wrap .port>div{width: 50%; position: relative;}
+#portfolio .port_wrap .port .port_img img{width: 100%;}
+#portfolio .port_wrap .port .port_text{font-size: 1.4rem; padding: 30px; display: flex; flex-direction: column; justify-content: space-evenly;}
+#portfolio .port_wrap .port .port_text h3{font-weight: 800; font-size:2rem;}
+#portfolio .port_wrap .port .port_text span{font-weight: 700;}
+#portfolio .port_wrap .port .port_text li{line-height: 1.8;}
+#portfolio .view_skill_wrap{display: flex;}
+#portfolio .skill_btn{width: 120px; line-height: 38px; font-size: 1.6rem; text-align: center; background:none; font-weight: 500; border: 1px solid #000; transition-duration: 0.5s; border-radius: 50px;}
+#portfolio .skill_btn:first-child{margin-right: 40px;}
+#portfolio .skill_btn:hover, #portfolio .skill_btn:focus{background-color: #000; color: #FFF;}
+
+/* 포트폴리오 영상 창 */
+.light_wrap{position: fixed; width: 100%; height: 100%; left: 0; top: 0; background-color: rgba(0,0,0,0.7); z-index: 9999; display: none;}
+.light_wrap .light_inner{position: absolute; width: 80%; left: 50%; top: 50%; transform: translate(-50%,-50%);}
+.light_wrap .light_inner video{display: block; width: 100%;}
+.light_wrap .light_inner .close_btn{position: absolute; right: 10px; top: 10px; border: none; color: #FFF; background-color: rgba(0,0,0,0.8); padding:8px 12px; cursor: pointer; } /* 포트폴리오 버튼 닫기 */
+
+/* contact ----------------------------------------------------------------- */
+#contact{position: relative; padding: 200px 0px 100px; overflow: hidden; }
+#contact .inner{position: relative; width: 90%; max-width: 1200px; margin: 0 auto; display: flex; flex-direction: column; align-items: center;}
+#contact h2{font-size: 5rem; font-weight: 800; margin-bottom: 50px;}
+#contact .sns{display: flex; align-items: center;}
+#contact .sns a{margin:0px 10px;}
+
+#contact .top_btn{border: none; background-color: rgba(0, 0, 0, 0); position: absolute; width: 40px; height: 40px; right: 360px; bottom: 200px;}
+#contact .top_btn img{width: 40px; height: 40px;}
+
+/* footer ----------------------------------------------------------------- */
+#footer{padding:50px 0px;}
+#footer .inner{text-align: center;}
+#footer .inner p{color: #000; font-weight: 600;}
+
+
+
+
+
+/* ★★★★★ 반응형 (1200보다 작은 화면 : 태블릿 & 모바일 공통) ----------------------------------------------------------------- */
+@media screen and (max-width:1200px){
+    #topBanner{margin-top: 60px;}
+    #topBanner .top_text h2{font-size: 3rem;  color: #FFF; text-shadow: 0 0 5px rgba(0,0,0,0.7); position: relative;}
+    #topBanner .top_text p{display: none;}
+    #topBanner .controls_wrap{position: absolute; left: 50%; bottom: 20px; transform: translateX(-50%); display: flex; align-items: center;}
+
+    #header .inner{width: 100%; padding:10px;}
+    .top_logo{height:24px;}
+    .top_logo img{width:24px;}
+    .gnb{}
+    .gnb a{font-size: 1.4rem; margin-left:10px; font-weight: normal;}
+
+    .main_video>video{height:60vh;}
+
+    #about{position: relative; padding-top:60px; margin-top: 60vh;} /* 바로 위 코드 .main_video>video{height:60vh;} 의 height 값만큼 margin-top 값 수정 필요. */
+    #about .inner{position: relative; width: 96%; margin: 0 auto; z-index: 998;}
+    #about .inner h2{text-align: center; font-size: 3rem; color: #222; position: relative; margin-bottom: 16px; line-height:1;}
+    #about .inner h2::after{content: ""; display: block; position: relative; width: 60px; height: 1px; background-color: #222; margin: 12px auto;}
+    #about .about_wrap{position: relative; display: block}
+    #about .about_img{width: 100%; text-align: center;}
+    #about .about_img img{width: 80%;}
+    #about .about_text{width: 100%; padding:30px 20px; display: flex; flex-direction: column; justify-content: space-evenly;}
+    #about .about_text .slogan{font-size: 2rem;}
+    #about .about_text h3{margin: 24px 0px; font-size:1.8rem;}
+    #about .about_text h4{font-size: 1.6rem; margin-bottom:0px;}
+    #about .about_text li{font-size: 1.4rem;}
+
+    #about .about_btn{float: right; display: flex; flex-direction: row; margin-top:20px; margin-right: 40px;}
+
+    #skill{padding-top: 60px;}
+    #skill .inner h2{font-size: 3rem; margin-bottom: 0px;} 
+    #skill .inner{width: 100%; text-align: center;}
+    #skill .skill_list{flex-wrap: wrap; margin:32px 0px 0px;}
+    #skill .skill_list>li{width: 48%; margin-bottom: 20px;}
+    #skill .skill_list>li div{width: 30px; height: 30px; border-width:4px;}
+    #skill .skill_list>li div p{font-size:3rem}
+    #skill .skill_list>li li{font-size: 1.3rem;}
+
+    #portfolio{position: relative; padding: 80px 0px 0px; display: flex; flex-direction: column ; align-items: center; }
+    #portfolio h2{font-size: 3rem; font-weight: 800; margin: 0px; color: #000;}
+    #portfolio .port_wrap{position: relative; width: 90%; max-width: 1200px;}
+    #portfolio .port_wrap .port{display: block; margin:24px 0px 40px;}
+    #portfolio .port_wrap .port:last-child{margin-bottom:0px;}
+    #portfolio .port_wrap .port>div{width:100%; position: relative;}
+    #portfolio .port_wrap .port .port_img img{width: 100%;}
+    #portfolio .port_wrap .port .port_text{ padding: 20px 0px 0px 0px; display: flex; flex-direction: column; justify-content: space-evenly;}
+    #portfolio .port_wrap .port .port_text h3{font-size: 1.5rem; font-weight: 800;}
+    #portfolio .port_wrap .port .port_text span{font-size: 1.3rem; font-weight: 700;}
+    #portfolio .port_wrap .port .port_text li{font-size: 1.3rem;}
+    #portfolio .view_skill_wrap{margin-top: 12px;}
+    #portfolio .skill_btn{font-size:1.4rem; line-height: 36px; width: 100px;}
+    #portfolio .skill_btn:hover{background-color: #000; color: #FFF;}
+    #portfolio .skill_btn:first-child{margin-right:24px;}
+
+    #contact{padding: 80px 0px 0px;}    
+    #contact h2{font-size: 3rem; margin-bottom: 16px;}
+    .sns a{ width:26px;}
+    .sns a img{width:100%;}
+
+    #contact .top_btn{border: none; background-color: rgba(0, 0, 0, 0); position: absolute; width: 40px; height: 40px; right: 30px; bottom: 200px;}
+
+    /* footer ----------------------------------------------------------------- */
+    #footer{padding:30px 0px 20px;}
+    #footer .inner{text-align: center; font-size:1.2rem;}
+    #footer .inner p{color: #000; font-weight: 600;}
+} /* 태블릿 & 모바일 공통 END */
+
+
+
+
+/* ★★★★★ 반응형 (태블릿) ----------------------------------------------------------------- */
+@media screen and (min-width:767px) and (max-width:1200px){
+    #about .about_wrap{
+        display:flex;
+    }
+    #about .about_img{
+        width:40%;
+    }
+    #skill .skill_list>li{
+        width:33.3%;
+    }
+    #skill .skill_list>li li{
+        font-size: 1.4rem;
+    }
+} /* 태블릿 END */
